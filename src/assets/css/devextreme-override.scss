@@ -23,3 +23,15 @@
   height: 56px;
   overflow: visible;
 }
+
+// button
+.dx-button.dx-button-has-icon:not(.dx-button-has-text):not(.dx-shape-standard) {
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+// mobile
+.dx-device-mobile .dx-toolbar .dx-toolbar-items-container {
+  height: 56px;
+  overflow: visible;
+}

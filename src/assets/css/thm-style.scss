@@ -36,4 +36,13 @@ html, body {
             margin-top: 20px;
         }
     }
+
+    .screen-x-small .content-block {
+        margin-left: 20px !important;
+        margin-right: 20px !important;
+    }
+
+    .side-nav-outer-toolbar .dx-drawer {
+        height: calc(100% - 56px);
+    }
 }
