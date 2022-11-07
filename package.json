@@ -1,5 +1,5 @@
 {
-  "name": "the-inn-manager",
+  "name": "the-hostel-manager",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -15,10 +15,10 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "SET PORT=3005 && react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "start": "SET PORT=3005 && react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "build-themes": "devextreme build"
   },
   "eslintConfig": {
@@ -40,6 +40,7 @@
     ]
   },
   "devDependencies": {
+    "babel-plugin-module-resolver": "^4.1.0",
     "css-loader": "^6.7.1",
     "devextreme-cli": "^1.4.2",
     "devextreme-themebuilder": "^22.1.3",

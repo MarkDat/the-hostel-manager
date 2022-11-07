@@ -6,6 +6,8 @@ import LoadPanel from 'devextreme-react/load-panel';
 
 import logo from './logo.svg';
 import './App.css';
+import '@app-devextreme-override-style';
+import '@app-thm-style';
 
 import Content from './Content';
 import { AuthProvider, useAuth } from './contexts/auth';

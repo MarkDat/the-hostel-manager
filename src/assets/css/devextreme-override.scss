@@ -1,0 +1,25 @@
+.dx-theme-material-typography .dx-swatch-additional,
+.dx-theme-material-typography.dx-swatch-additional {
+  background-color: #363640;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+  font-family: Roboto,RobotoFallback,"Noto Kufi Arabic",Helvetica,Arial,sans-serif;
+  line-height: 1.2857;
+}
+
+.with-footer > .dx-scrollable-wrapper > .dx-scrollable-container > .dx-scrollable-content {
+    height: 100%;
+    
+    > .dx-scrollview-content {
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+    }
+}
+
+// toolbar
+.dx-toolbar .dx-toolbar-items-container {
+  height: 56px;
+  overflow: visible;
+}
