@@ -57,11 +57,11 @@
       // ## Item levels customization
       .dx-treeview-node {
         &[aria-level='1'] {
-          font-weight: bold;
+          // font-weight: bold;
         }
   
         &[aria-level='2'] .dx-treeview-item-content {
-          font-weight: normal;
+          // font-weight: normal;
           padding: 0 60px;
         }
       }
@@ -72,16 +72,27 @@
     .dx-treeview {
       .dx-treeview-node-container {
         .dx-treeview-node {
+          .dx-treeview-item {
+            min-height: 35px;
+          }
+
           &.dx-state-selected:not(.dx-state-focused)> .dx-treeview-item {
             background: transparent;
           }
 
-          &.dx-state-selected > .dx-treeview-item * {
-            color: $base-color;
+          &.dx-state-selected {
+            border-right: 4px solid $base-color;
+            background-color: $navbar-selected-color;
+            font-weight: bold;
+
+            > .dx-treeview-item * {
+              color: $base-color;
+            }
           }
 
           &:not(.dx-state-focused)>.dx-treeview-item.dx-state-hover {
-            background-color: lighten(#363640, 4.00);
+            color: $base-color;
+            background-color: transparent !important;
           }
         }
       }
