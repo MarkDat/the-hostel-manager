@@ -65,6 +65,7 @@ export default function SideNavigationMenu(props) {
     }
 
     handleParentSelected();
+    
   }, [currentPath, compactMode]);
 
   const handleParentSelected = useCallback(() => {
