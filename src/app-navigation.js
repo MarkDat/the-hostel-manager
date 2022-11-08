@@ -1,19 +1,19 @@
 export const navigation = [
   {
-    text: 'Home',
+    text: 'Thống kê',
     path: '/home',
     icon: 'home'
   },
   {
-    text: 'Examples',
+    text: 'Thông tin',
     icon: 'folder',
     items: [
       {
-        text: 'Profile',
+        text: 'Cá nhân',
         path: '/profile'
       },
       {
-        text: 'Tasks',
+        text: 'Nhiệm vụ',
         path: '/tasks'
       }
     ]

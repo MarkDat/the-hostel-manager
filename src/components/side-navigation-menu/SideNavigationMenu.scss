@@ -72,8 +72,12 @@
     .dx-treeview {
       .dx-treeview-node-container {
         .dx-treeview-node {
+          background-color: transparent;
+          transition: background-color 400ms linear;
+
           .dx-treeview-item {
-            min-height: 35px;
+            min-height: 40px;
+            padding: 8px 0;
           }
 
           &.dx-state-selected:not(.dx-state-focused)> .dx-treeview-item {
@@ -81,9 +85,9 @@
           }
 
           &.dx-state-selected {
+            transition: background-color 500ms linear;
             border-right: 3px solid $base-color;
             background-color: $navbar-selected-color;
-            font-weight: bold;
 
             > .dx-treeview-item * {
               color: $base-color;

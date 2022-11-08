@@ -1,5 +1,5 @@
 const appInfo = {
-    title: 'The Inn Manager'
+    title: 'Hostel Manager System'
 };
 export default appInfo;
 
