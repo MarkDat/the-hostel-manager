@@ -74,6 +74,7 @@ export default function SideNavigationMenu(props) {
     
     if(!selectedNode || !selectedNode.parent || !isNumeric(selectedNode.parent.key)) {
       firstParentNode.current?.classList.remove('child-selected');
+      firstParentNode.current = null;
       return;
     }
 
