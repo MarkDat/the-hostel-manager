@@ -7,6 +7,7 @@ import './SideNavigationMenu.scss';
 
 
 import * as events from 'devextreme/events';
+import { isNumeric } from '@app-tools/common-functions';
 
 export default function SideNavigationMenu(props) {
   const {
@@ -16,6 +17,8 @@ export default function SideNavigationMenu(props) {
     compactMode,
     onMenuReady
   } = props;
+
+  const firstParentNode = useRef(null);
 
   const { isLarge } = useScreenSize();
   function normalizePath () {
@@ -60,7 +63,26 @@ export default function SideNavigationMenu(props) {
     if (compactMode) {
       treeView.collapseAll();
     }
+
+    handleParentSelected();
   }, [currentPath, compactMode]);
+
+  const handleParentSelected = useCallback(() => {
+    const navCurrent = treeViewRef.current;
+    const selectedNode = navCurrent.instance.getSelectedNodes()[0];
+    
+    if(!selectedNode || !selectedNode.parent || !isNumeric(selectedNode.parent.key)) {
+      firstParentNode.current.classList.remove('child-selected');
+      return;
+    }
+
+    const parentKey = selectedNode.parent.key - 1;
+    const nodeElements = navCurrent.instance._nodeElements();
+
+    firstParentNode.current = nodeElements[parentKey].childNodes[0];
+    firstParentNode.current.className += ' child-selected';
+  
+  }, [treeViewRef]);
 
   return (
     <div

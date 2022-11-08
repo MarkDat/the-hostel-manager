@@ -6,7 +6,8 @@
         "alias": {
           "@app-devextreme-override-style" : "assets/css/thm-style.scss",
           "@app-thm-style" : "assets/css/thm-style.scss",
-          "@app-components/*" : "components/*" 
+          "@app-components/*" : "components/*",
+          "@app-tools" : "tools" 
         }
       }
     ]
