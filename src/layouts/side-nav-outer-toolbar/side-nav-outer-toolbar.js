@@ -45,12 +45,19 @@ export default function SideNavOuterToolbar({ title, children }) {
   }, []);
 
   const onOutsideClick = useCallback(() => {
+    // setMenuStatus(
+    //   prevMenuStatus => prevMenuStatus !== MenuStatus.Closed && !isLarge
+    //     ? MenuStatus.Closed
+    //     : prevMenuStatus
+    // );
+
     setMenuStatus(
-      prevMenuStatus => prevMenuStatus !== MenuStatus.Closed && !isLarge
+      prevMenuStatus => !isLarge
         ? MenuStatus.Closed
         : prevMenuStatus
     );
-    return true;
+
+    return !isLarge;
   }, [isLarge]);
 
   const onNavigationChanged = useCallback(({ itemData, event, node }) => {
