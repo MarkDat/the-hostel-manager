@@ -65,7 +65,7 @@ export default function SideNavigationMenu(props) {
     }
 
     handleParentSelected();
-    
+
   }, [currentPath, compactMode]);
 
   const handleParentSelected = useCallback(() => {
@@ -73,7 +73,7 @@ export default function SideNavigationMenu(props) {
     const selectedNode = navCurrent.instance.getSelectedNodes()[0];
     
     if(!selectedNode || !selectedNode.parent || !isNumeric(selectedNode.parent.key)) {
-      firstParentNode.current.classList.remove('child-selected');
+      firstParentNode.current?.classList.remove('child-selected');
       return;
     }
 
