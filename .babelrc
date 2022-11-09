@@ -6,7 +6,7 @@
         "alias": {
           "@app-devextreme-override-style" : "assets/css/devextreme-override.scss",
           "@app-hms-style" : "assets/css/hms-style.scss",
-          "@app-components/*" : "components/*",
+          "@app-components" : "components",
           "@app-tools" : "tools" 
         }
       }
