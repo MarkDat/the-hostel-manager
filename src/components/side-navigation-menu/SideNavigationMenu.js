@@ -1,13 +1,14 @@
-import React, { useEffect, useRef, useCallback, useMemo } from 'react';
 import TreeView from 'devextreme-react/tree-view';
+import { useCallback, useEffect, useMemo, useRef } from 'react';
 import { navigation } from '../../app-navigation';
 import { useNavigation } from '../../contexts/navigation';
 import { useScreenSize } from '../../utils/media-query';
 import './SideNavigationMenu.scss';
 
 
-import * as events from 'devextreme/events';
 import { isNumeric } from '@app-tools/common-functions';
+import * as events from 'devextreme/events';
+import { useLocation } from 'react-router-dom';
 
 export default function SideNavigationMenu(props) {
   const {
@@ -19,6 +20,7 @@ export default function SideNavigationMenu(props) {
   } = props;
 
   const firstParentNode = useRef(null);
+  const location = useLocation();
 
   const { isLarge } = useScreenSize();
   function normalizePath () {
@@ -33,7 +35,7 @@ export default function SideNavigationMenu(props) {
     []
   );
 
-  const { navigationData: { currentPath } } = useNavigation();
+  const { navigationData: { currentPath }, setNavigationData } = useNavigation();
 
   const treeViewRef = useRef(null);
   const wrapperRef = useRef();
@@ -86,12 +88,13 @@ export default function SideNavigationMenu(props) {
   
   }, [treeViewRef]);
 
+  console.log(treeViewRef);
+
   return (
     <div
       className={'dx-swatch-additional side-navigation-menu'}
       ref={getWrapperRef}
     >
-      {children}
       <div className={'menu-container'}>
         <TreeView
           ref={treeViewRef}

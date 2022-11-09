@@ -1,3 +1,4 @@
+import { useNavigation } from 'contexts/navigation';
 import { Template } from 'devextreme-react/core/template';
 import Drawer from 'devextreme-react/drawer';
 import ScrollView from 'devextreme-react/scroll-view';
@@ -8,16 +9,6 @@ import { useScreenSize } from '../../utils/media-query';
 import { useMenuPatch } from '../../utils/patches';
 import './side-nav-outer-toolbar.scss';
 
-
-export const employeesList = ['John Heart', 'Samantha Bright', 'Arthur Miller', 'Robert Reagan', 'Greta Sims', 'Brett Wade',
-  'Sandra Johnson', 'Ed Holmes', 'Barb Banks', 'Kevin Carter', 'Cindy Stanwick', 'Sammy Hill', 'Davey Jones', 'Victor Norris',
-  'Mary Stern', 'Robin Cosworth', 'Kelly Rodriguez', 'James Anderson', 'Antony Remmen', 'Olivia Peyton', 'Taylor Riley',
-  'Amelia Harper', 'Wally Hobbs', 'Brad Jameson', 'Karen Goodson', 'Marcus Orbison', 'Sandy Bright', 'Morgan Kennedy',
-  'Violet Bailey', 'Ken Samuelson', 'Nat Maguiree', 'Bart Arnaz', 'Leah Simpson', 'Arnie Schwartz', 'Billy Zimmer', 'Samantha Piper',
-  'Maggie Boxter', 'Terry Bradley', 'Gabe Jones', 'Lucy Ball', 'Jim Packard', 'Hannah Brookly', 'Harv Mudd', 'Clark Morgan',
-  'Todd Hoffman', 'Jackie Garmin', 'Lincoln Bartlett', 'Brad Farkus', 'Jenny Hobbs', 'Dallas Lou', 'Stu Pizaro'];
-
-
 export default function SideNavOuterToolbar({ title, children }) {
   const scrollViewRef = useRef(null);
   const navigate = useNavigate();
@@ -26,6 +17,7 @@ export default function SideNavOuterToolbar({ title, children }) {
   const [menuStatus, setMenuStatus] = useState(
     isLarge ? MenuStatus.Opened : MenuStatus.Closed
   );
+   const { setNavigationData } = useNavigation();
 
   const toggleMenu = useCallback(({ event }) => {
     setMenuStatus(
@@ -66,6 +58,7 @@ export default function SideNavOuterToolbar({ title, children }) {
       return;
     }
 
+    setNavigationData({ currentPath: itemData.path });
     navigate(itemData.path);
     scrollViewRef.current.instance.scrollTo(0);
 

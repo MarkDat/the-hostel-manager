@@ -7,11 +7,13 @@ import DataGrid, {
   FilterRow,
   Lookup
 } from 'devextreme-react/data-grid';
+import { Outlet } from 'react-router-dom';
 
 export default function Task() {
   return (
     <React.Fragment>
       <h2 className={'content-block'}>Tasks</h2>
+      <Outlet />
 
       <DataGrid
         className={'dx-card wide-card'}

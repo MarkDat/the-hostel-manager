@@ -1,8 +1,13 @@
+
 import React, { useState, createContext, useContext, useEffect } from 'react';
+import { getOnlyPathsNavigate } from 'tools/common-functions';
+
+import { navigation } from 'app-navigation';
 
 
 const NavigationContext = createContext({});
 const useNavigation = () => useContext(NavigationContext);
+const paths = getOnlyPathsNavigate(navigation);
 
 function NavigationProvider(props) {
   const [navigationData, setNavigationData] = useState({ currentPath: '' });
@@ -20,10 +25,17 @@ function withNavigationWatcher(Component, path) {
     const { setNavigationData } = useNavigation();
 
     useEffect(() => {
-      setNavigationData({ currentPath: path });
-    }, [path, setNavigationData]);
 
-    return <Component {...props} />;
+      const windowPath = window.location.pathname;
+      if(windowPath) {
+        const currentPathTemp = paths.find(_ => windowPath.startsWith(_));
+        setNavigationData({ currentPath: currentPathTemp });
+      }
+      
+    }, [setNavigationData]);
+    
+
+    return {...Component, ...props};
   }
   return <WrappedComponent />;
 }

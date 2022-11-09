@@ -10,11 +10,11 @@ export const navigation = [
     items: [
       {
         text: 'Cá nhân',
-        path: '/profile'
+        path: '/inform/profile'
       },
       {
         text: 'Nhiệm vụ',
-        path: '/tasks'
+        path: '/inform/tasks'
       }
     ]
   }
