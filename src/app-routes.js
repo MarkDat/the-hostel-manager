@@ -1,9 +1,14 @@
-import { HomePage, TasksPage, ProfilePage } from "./pages";
-import { withNavigationWatcher } from "./contexts/navigation";
 import Content from "Content";
 import { Navigate } from "react-router-dom";
-import Information from "components/information/Information";
-import UserPanel from "components/user-panel/UserPanel";
+import { dashboardRoute, roomRoute, settingRoute } from "routes";
+import { withNavigationWatcher } from "./contexts/navigation";
+import { HomePage } from "./pages";
+
+const childRoutes = [
+  ...dashboardRoute,
+  ...roomRoute,
+  ...settingRoute
+]
 
 const routes = [
   {
@@ -12,36 +17,9 @@ const routes = [
     children: [
       {
         index: true,
-        element: <Navigate to="/home" replace />,
+        element: <Navigate to="/dashboard" replace />,
       },
-      {
-        path: "/home",
-        element: <HomePage />,
-      },
-      {
-        path: "/inform",
-        element: <Information />,
-        children: [
-          {
-            index: true,
-            element: <Navigate to="tasks" />,
-          },
-          {
-            path: "tasks",
-            element: <TasksPage />,
-            children: [
-              {
-                path: ":id",
-                element: <UserPanel />,
-              }
-            ]
-          },
-          {
-            path: "profile",
-            element: <ProfilePage />,
-          },
-        ],
-      },
+      ...childRoutes,
     ],
   },
 ];

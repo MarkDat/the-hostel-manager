@@ -1,21 +1,22 @@
 export const navigation = [
   {
     text: 'Thống kê',
-    path: '/home',
+    path: '/dashboard',
     icon: 'home'
   },
   {
-    text: 'Thông tin',
+    text: 'Phòng trọ',
     icon: 'folder',
     items: [
       {
-        text: 'Cá nhân',
-        path: '/inform/profile'
-      },
-      {
-        text: 'Nhiệm vụ',
-        path: '/inform/tasks'
+        text: 'Danh sách phòng',
+        path: '/room/list'
       }
     ]
+  },
+  {
+    text: 'Cài đặt',
+    path: '/setting',
+    icon: 'home'
   }
-  ];
+];
