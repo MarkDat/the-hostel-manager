@@ -1,7 +1,7 @@
 export const navigation = [
   {
     text: 'Thống kê',
-    path: 'landlord/dashboard',
+    path: '/landlord/dashboard',
     icon: 'home'
   },
   {
@@ -10,13 +10,13 @@ export const navigation = [
     items: [
       {
         text: 'Danh sách phòng',
-        path: 'landlord/room/list'
+        path: '/landlord/room/list'
       }
     ]
   },
   {
     text: 'Cài đặt',
-    path: 'landlord/setting',
+    path: '/landlord/setting',
     icon: 'home'
   }
 ];
