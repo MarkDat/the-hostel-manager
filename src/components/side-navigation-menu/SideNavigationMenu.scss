@@ -62,7 +62,7 @@
   
         &[aria-level='2'] .dx-treeview-item-content {
           // font-weight: normal;
-          padding: 0 60px;
+          padding: 0 10px;
         }
       }
       // ##
@@ -88,6 +88,7 @@
             transition: background-color 500ms linear;
             border-right: 3px solid $base-color;
             background-color: $navbar-selected-color;
+            font-weight: 600;
 
             > .dx-treeview-item * {
               color: $base-color;

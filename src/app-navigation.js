@@ -2,14 +2,15 @@ export const navigation = [
   {
     text: 'Thống kê',
     path: '/landlord/dashboard',
-    icon: 'home'
+    icon: 'fa-regular fa-chart-line-up'
   },
   {
     text: 'Phòng trọ',
-    icon: 'folder',
+    icon: 'fa-regular fa-house-user',
     items: [
       {
         text: 'Danh sách phòng',
+        icon: 'fa-regular fa-notebook',
         path: '/landlord/room/list'
       }
     ]
@@ -17,6 +18,6 @@ export const navigation = [
   {
     text: 'Cài đặt',
     path: '/landlord/setting',
-    icon: 'home'
+    icon: 'fa-regular fa-gears'
   }
 ];
