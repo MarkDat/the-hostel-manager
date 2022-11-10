@@ -2,7 +2,7 @@ import { DashboardPage } from "pages";
 
 const routes = [
     {
-        path: "/dashboard",
+        path: "dashboard",
         element: <DashboardPage />,
     }
 ];

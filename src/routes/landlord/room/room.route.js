@@ -3,7 +3,7 @@ import {roomListRoute} from "routes"
 
 const routes = [
     {
-        path: "/room",
+        path: "room",
         element: <RoomPage />,
         children: [ ...roomListRoute ]
     }

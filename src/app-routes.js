@@ -2,9 +2,9 @@ import Content from "Content";
 import { Navigate } from "react-router-dom";
 import { dashboardRoute, roomRoute, settingRoute } from "routes";
 import { withNavigationWatcher } from "./contexts/navigation";
-import { HomePage } from "./pages";
+import { HomePage, LandLord } from "./pages";
 
-const childRoutes = [
+const childLandLordRoutes = [
   ...dashboardRoute,
   ...roomRoute,
   ...settingRoute
@@ -16,10 +16,20 @@ const routes = [
     element: <Content />,
     children: [
       {
-        index: true,
-        element: <Navigate to="/dashboard" replace />,
+        path: "/landlord",
+        element: <LandLord />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="./dashboard" replace />,
+          },
+          ...childLandLordRoutes
+        ]
       },
-      ...childRoutes,
+      {
+        index: true,
+        element: <Navigate to="/landlord" replace />,
+      }
     ],
   },
 ];

@@ -3,7 +3,7 @@ import { SettingPage } from "pages";
 
 const routes = [
     {
-        path: "/setting",
+        path: "setting",
         element: <SettingPage />,
     }
 ];
