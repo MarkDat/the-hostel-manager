@@ -5,7 +5,7 @@ import 'devextreme/dist/css/dx.light.css';
 import LoadPanel from 'devextreme-react/load-panel';
 
 import logo from './logo.svg';
-import './App.css';
+import './App.scss';
 import '@app-devextreme-override-style';
 import '@app-hms-style';
 
