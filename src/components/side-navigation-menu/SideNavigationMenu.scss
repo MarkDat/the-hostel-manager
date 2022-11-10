@@ -46,7 +46,21 @@
       .dx-treeview-toggle-item-visibility {
         right: 10px;
         left: auto;
+
+        &.dx-treeview-toggle-item-visibility-opened::before {
+          font: var(--fa-font-solid);
+          content: "\f0d7";
+        }
       }
+
+      .dx-treeview-toggle-item-visibility::before {
+        font: var(--fa-font-light);
+        content: "\f0da";
+        margin-top: -7px;
+        margin-left: -12px;
+      }
+
+      
 
       .dx-rtl .dx-treeview-toggle-item-visibility {
         left: 10px;
@@ -96,7 +110,7 @@
           }
 
           &:not(.dx-state-focused)>.dx-treeview-item.dx-state-hover {
-            color: $base-color;
+            color: $base-color !important;
             background-color: transparent !important;
           }
         }
