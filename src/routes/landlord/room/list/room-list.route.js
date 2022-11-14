@@ -1,10 +1,11 @@
+import { RequireAuth } from "components";
 import { RoomListPage } from "pages";
 
 
 const routes = [
     {
         path: "list",
-        element: <RoomListPage />,
+        element: <RequireAuth><RoomListPage /></RequireAuth>,
     }
 ];
 

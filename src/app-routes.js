@@ -1,3 +1,4 @@
+import { RequireAuth } from "components";
 import Content from "Content";
 import { Navigate } from "react-router-dom";
 import { dashboardRoute, roomRoute, settingRoute } from "routes";
