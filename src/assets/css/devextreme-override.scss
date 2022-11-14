@@ -1,3 +1,5 @@
+@import './variables/variables-style.scss';
+
 .dx-theme-material-typography .dx-swatch-additional,
 .dx-theme-material-typography.dx-swatch-additional {
   background-color: #363640;
@@ -34,4 +36,14 @@
 .dx-device-mobile .dx-toolbar .dx-toolbar-items-container {
   height: 56px;
   overflow: visible;
+}
+
+.dx-datagrid-rowsview .dx-row-focused.dx-data-row .dx-command-edit:not(.dx-focused) .dx-link, .dx-datagrid-rowsview .dx-row-focused.dx-data-row > td:not(.dx-focused), .dx-datagrid-rowsview .dx-row-focused.dx-data-row > tr > td:not(.dx-focused) {
+  background-color: $base-fainter-color;
+  color: black;
+}
+
+.dx-datagrid-rowsview .dx-row-focused.dx-data-row:not(.dx-row-lines) > td, .dx-datagrid-rowsview .dx-row-focused.dx-data-row:not(.dx-row-lines) > tr:first-child > td {
+  border-top: none;
+  border-bottom: none;
 }

@@ -1,0 +1,16 @@
+@import '~assets/css/variables/variables-style.scss';
+
+.action-cell {
+    display: flex;
+    justify-content: space-around;
+
+    &--edit {
+        color: $base-color;
+        cursor: pointer;
+    }
+    
+    &--delete {
+        color: red;
+        cursor: pointer;
+    }
+}
