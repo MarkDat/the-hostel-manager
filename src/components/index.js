@@ -6,3 +6,7 @@ export { default as CreateAccountForm } from './create-account-form/CreateAccoun
 export { default as ChangePasswordForm } from './change-password-form/ChangePasswordForm';
 export { default as SideNavigationMenu } from './side-navigation-menu/SideNavigationMenu';
 export { default as RequireAuth } from './require-auth/RequireAuth';
+export { default as  RoomList } from './room-list/RoomList';
+
+// Shared
+export { default as ActionCellTemplate } from './shared/ActionCellTemplate/ActionCellTemplate';
