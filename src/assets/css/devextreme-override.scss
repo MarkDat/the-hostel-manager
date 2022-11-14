@@ -47,3 +47,17 @@
   border-top: none;
   border-bottom: none;
 }
+
+.dx-pager .dx-page-sizes .dx-selection, .dx-pager .dx-pages .dx-selection {
+  background-color: $base-fainter2-color;
+  color: white;
+}
+
+.dx-datagrid-headers {
+  color: black;
+  background-color: #fafafafa;
+}
+
+.dx-card {
+  border-radius: 8px;
+}
