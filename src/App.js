@@ -1,7 +1,5 @@
 import { createBrowserRouter, HashRouter as Router, RouterProvider } from 'react-router-dom';
 
-import 'devextreme/dist/css/dx.common.css';
-import 'devextreme/dist/css/dx.light.css';
 import LoadPanel from 'devextreme-react/load-panel';
 
 import logo from './logo.svg';
