@@ -1,6 +1,6 @@
 import TreeView from 'devextreme-react/tree-view';
-import { useCallback, useEffect, useMemo, useRef } from 'react';
-import { navigation } from '../../app-navigation';
+import { memo, useCallback, useEffect, useMemo, useRef } from 'react';
+import { landlordNavigation as navigation } from '../../app-navigation';
 import { useNavigation } from '../../contexts/navigation';
 import { useScreenSize } from '../../utils/media-query';
 import './SideNavigationMenu.scss';
@@ -10,13 +10,14 @@ import { isNumeric } from '@app-tools/common-functions';
 import * as events from 'devextreme/events';
 import { useLocation } from 'react-router-dom';
 
-export default function SideNavigationMenu(props) {
+function SideNavigationMenu(props) {
   const {
     children,
     selectedItemChanged,
     openMenu,
     compactMode,
-    onMenuReady
+    onMenuReady,
+    onInitialized
   } = props;
 
   const firstParentNode = useRef(null);
@@ -88,7 +89,7 @@ export default function SideNavigationMenu(props) {
   
   }, [treeViewRef]);
 
-  console.log(treeViewRef);
+  console.log(treeViewRef.current);
 
   return (
     <div
@@ -106,8 +107,12 @@ export default function SideNavigationMenu(props) {
           onItemClick={selectedItemChanged}
           onContentReady={onMenuReady}
           width={'100%'}
+          onInitialized={onInitialized}
         />
       </div>
     </div>
   );
 }
+
+
+export default memo(SideNavigationMenu);

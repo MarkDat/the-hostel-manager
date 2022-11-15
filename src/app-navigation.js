@@ -1,4 +1,4 @@
-export const navigation = [
+export const landlordNavigation = [
   {
     text: 'Thống kê',
     path: '/landlord/dashboard',

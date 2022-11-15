@@ -1,13 +1,12 @@
 
 import React, { useState, createContext, useContext, useEffect } from 'react';
-import { getOnlyPathsNavigate } from '@app-tools/common-functions';
+import { getCurrentNavigatePath } from '@app-tools/common-functions';
 
-import { navigation } from '../app-navigation';
+import { landlordNavigation as navigation } from '../app-navigation';
 
 
 const NavigationContext = createContext({});
 const useNavigation = () => useContext(NavigationContext);
-const paths = getOnlyPathsNavigate(navigation);
 
 function NavigationProvider(props) {
   const [navigationData, setNavigationData] = useState({ currentPath: '' });
@@ -26,11 +25,7 @@ function withNavigationWatcher(Component, path) {
 
     useEffect(() => {
 
-      const windowPath = window.location.pathname;
-      if(windowPath) {
-        const currentPathTemp = paths.find(_ => windowPath.startsWith(_));
-        setNavigationData({ currentPath: currentPathTemp });
-      }
+      setNavigationData({ currentPath: getCurrentNavigatePath(navigation) });
       
     }, [setNavigationData]);
     

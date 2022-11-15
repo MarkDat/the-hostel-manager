@@ -7,9 +7,11 @@ import { useNavigate } from 'react-router';
 import { Footer, Header, SideNavigationMenu } from '../../components';
 import { useScreenSize } from '../../utils/media-query';
 import { useMenuPatch } from '../../utils/patches';
+import { getCurrentNavigatePath } from '@app-tools/common-functions';
+
 import './side-nav-outer-toolbar.scss';
 
-export default function SideNavOuterToolbar({ title, children }) {
+export default function SideNavOuterToolbar({ title, navigation, children }) {
   const scrollViewRef = useRef(null);
   const navigate = useNavigate();
   const { isXSmall, isLarge } = useScreenSize();
@@ -68,6 +70,11 @@ export default function SideNavOuterToolbar({ title, children }) {
     }
   }, [navigate, menuStatus, isLarge]);
 
+
+  const onMenuInitialized = useCallback((e) => {
+    setNavigationData({ currentPath: getCurrentNavigatePath(navigation) });
+  });
+
   return (
     <div className={'side-nav-outer-toolbar'}>
       <Header
@@ -107,6 +114,7 @@ export default function SideNavOuterToolbar({ title, children }) {
             selectedItemChanged={onNavigationChanged}
             openMenu={temporaryOpenMenu}
             onMenuReady={onMenuReady}
+            onInitialized={onMenuInitialized}
           >
           </SideNavigationMenu>
         </Template>
