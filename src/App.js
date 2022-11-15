@@ -4,8 +4,6 @@ import LoadPanel from 'devextreme-react/load-panel';
 
 import logo from './logo.svg';
 import './App.scss';
-import '@app-devextreme-override-style';
-import '@app-hms-style';
 
 import Content from './Content';
 import { AuthProvider, useAuth } from './contexts/auth';

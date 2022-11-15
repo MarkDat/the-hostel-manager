@@ -1,6 +1,6 @@
-import { RoomPage } from "pages";
+import { RoomPage } from "@app-pages";
 import { Navigate } from "react-router-dom";
-import { roomListRoute } from "routes"
+import { roomListRoute } from "@app-routes"
 
 const routes = [
     {

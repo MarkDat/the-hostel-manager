@@ -1,4 +1,4 @@
-import { SettingPage } from "pages";
+import { SettingPage } from "@app-pages";
 
 
 const routes = [

@@ -1,4 +1,4 @@
-import { RoomList } from 'components';
+import { RoomList } from '@app-components';
 import React from 'react';
 
 export default function RoomListPage() {

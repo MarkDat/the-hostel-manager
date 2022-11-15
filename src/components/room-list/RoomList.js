@@ -1,4 +1,4 @@
-import { ActionCellTemplate } from "components";
+import { ActionCellTemplate } from "@app-components";
 import { DataGrid, Lookup } from "devextreme-react";
 import { Column, FilterRow, Pager, Paging } from "devextreme-react/data-grid";
 import React, { useEffect } from "react";

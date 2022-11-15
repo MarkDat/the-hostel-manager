@@ -1,8 +1,8 @@
-import { RequireAuth } from "components";
-import Content from "Content";
+import { RequireAuth } from "@app-components";
+import Content from "~/Content";
 import { Navigate } from "react-router-dom";
-import { dashboardRoute, roomRoute, settingRoute } from "routes";
-import { withNavigationWatcher } from "./contexts/navigation";
+import { dashboardRoute, roomRoute, settingRoute } from "~/routes";
+import { withNavigationWatcher } from "@app-contexts/navigation";
 import { HomePage, LandLord } from "./pages";
 
 const childLandLordRoutes = [

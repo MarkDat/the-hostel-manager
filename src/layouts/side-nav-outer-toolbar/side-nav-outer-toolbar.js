@@ -1,4 +1,4 @@
-import { useNavigation } from 'contexts/navigation';
+import { useNavigation } from '@app-contexts/navigation';
 import { Template } from 'devextreme-react/core/template';
 import Drawer from 'devextreme-react/drawer';
 import ScrollView from 'devextreme-react/scroll-view';

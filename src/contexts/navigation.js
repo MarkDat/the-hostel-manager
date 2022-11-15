@@ -1,8 +1,8 @@
 
 import React, { useState, createContext, useContext, useEffect } from 'react';
-import { getOnlyPathsNavigate } from 'tools/common-functions';
+import { getOnlyPathsNavigate } from '@app-tools/common-functions';
 
-import { navigation } from 'app-navigation';
+import { navigation } from '../app-navigation';
 
 
 const NavigationContext = createContext({});

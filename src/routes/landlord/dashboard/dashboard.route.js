@@ -1,4 +1,4 @@
-import { DashboardPage } from "pages";
+import { DashboardPage } from "@app-pages";
 
 const routes = [
     {

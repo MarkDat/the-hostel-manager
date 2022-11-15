@@ -1,8 +1,8 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
-import { Footer } from "components";
-import appInfo from "app-info";
-import { SideNavOuterToolbar as SideNavBarLayout } from "layouts";
+import { Footer } from "@app-components";
+import appInfo from "~/app-info";
+import { SideNavOuterToolbar as SideNavBarLayout } from "@app-layouts";
 
 export default function LandLord() {
   return (

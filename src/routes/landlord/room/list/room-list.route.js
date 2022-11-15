@@ -1,5 +1,5 @@
-import { RequireAuth } from "components";
-import { RoomListPage } from "pages";
+import { RequireAuth } from "@app-components";
+import { RoomListPage } from "@app-pages";
 
 
 const routes = [

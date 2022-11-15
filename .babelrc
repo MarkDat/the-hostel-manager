@@ -4,10 +4,14 @@
       "module-resolver",
       {
         "alias": {
-          "@app-devextreme-override-style" : "assets/css/devextreme-override.scss",
-          "@app-hms-style" : "assets/css/hms-style.scss",
-          "@app-components" : "components",
-          "@app-tools" : "tools" 
+          "~": "./src",
+          "@app-components" : "src/components",
+          "@app-tools" : "src/tools",
+          "@app-contexts" : "src/contexts",
+          "@app-layouts" : "src/layouts",
+          "@app-pages" : "src/pages",
+          "@app-utils" : "src/utils",
+          "@app-routes" : "src/routes"
         }
       }
     ]
