@@ -8,7 +8,7 @@ import { RoomPopup } from "@app-components";
 
 export default function RoomList() {
 	const [dataSource, setDataSource] = useState([]);
-	const [isShowRoomDetails, setShowRoomDetails] = useState(false); console.log('call popup');
+	const [isShowRoomDetails, setShowRoomDetails] = useState(true);
 
 	useEffect(() => {
 		setDataSource([

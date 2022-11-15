@@ -66,3 +66,16 @@
 .dx-pager {
   padding: 9px 5px;
 }
+
+// Popup
+.dx-popup-bottom.dx-toolbar {
+  padding: 10px;
+}
+
+.dx-popup-bottom .dx-button {
+  min-width: 50px !important;
+}
+
+.dx-button-has-text .dx-button-content {
+  padding: 7px 10px 7px;
+}

@@ -1,4 +1,5 @@
 @import 'devextreme-override.scss';
+@import 'variables/variables-style.scss';
 
 html, body {
     margin: 0px;
@@ -45,4 +46,27 @@ html, body {
     .side-nav-outer-toolbar .dx-drawer {
         height: calc(100% - 56px);
     }
+}
+
+.btn-ok {
+    background-color: $base-color;
+    color: #f2f2f2;
+}
+
+.btn-ok:hover {
+    background-color: $base-color;
+    opacity: 0.9;
+    transition: opacity 200ms linear;
+}
+
+.btn-cancel {
+    background: none;
+    color: red;
+    border: 1px solid red;
+}
+
+.btn-cancel:hover {
+    @extend .btn-cancel;
+    opacity: 0.8;
+    transition: opacity 200ms linear;
 }
