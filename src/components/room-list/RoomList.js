@@ -58,7 +58,7 @@ export default function RoomList() {
 
   return (
     <>
-      <h2 className={"content-block"}>Room List</h2>
+      <h2 className={"content-block"}>Danh sách phòng</h2>
       <div className={"content-block"}>
         <DataGrid
           className={"dx-card wide-card"}
