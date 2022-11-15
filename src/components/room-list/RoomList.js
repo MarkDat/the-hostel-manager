@@ -5,7 +5,6 @@ import React, { useCallback, useEffect } from "react";
 import { useState } from "react";
 
 import {RoomPopup} from "@app-components";
-import { getScreenSize } from "@app-utils/media-query";
 
 export default function RoomList() {
   const [dataSource, setDataSource] = useState([]);
