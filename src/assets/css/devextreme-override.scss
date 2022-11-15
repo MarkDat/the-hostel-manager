@@ -38,6 +38,7 @@
   overflow: visible;
 }
 
+// Data grid
 .dx-datagrid-rowsview .dx-row-focused.dx-data-row .dx-command-edit:not(.dx-focused) .dx-link, .dx-datagrid-rowsview .dx-row-focused.dx-data-row > td:not(.dx-focused), .dx-datagrid-rowsview .dx-row-focused.dx-data-row > tr > td:not(.dx-focused) {
   background-color: $base-fainter-color;
   color: black;
@@ -60,4 +61,8 @@
 
 .dx-card {
   border-radius: 8px;
+}
+
+.dx-pager {
+  padding: 9px 5px;
 }
