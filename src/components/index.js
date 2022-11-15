@@ -9,4 +9,4 @@ export { default as RequireAuth } from './require-auth/RequireAuth';
 export { default as  RoomList } from './room-list/RoomList';
 
 // Shared
-export { default as ActionCellTemplate } from './shared/ActionCellTemplate/ActionCellTemplate';
+export { default as ActionCellTemplate } from './shared/action-cell-template/ActionCellTemplate';
