@@ -1,9 +1,11 @@
-import { RoomDetails } from '@app-components';
+import { RoomDetails } from "@app-components";
 
 export default function RoomDetailsPage() {
   return (
     <>
-      <RoomDetails></RoomDetails>
+      <div className="room-details-page">
+        <RoomDetails></RoomDetails>
+      </div>
     </>
-)};
-
+  );
+}
