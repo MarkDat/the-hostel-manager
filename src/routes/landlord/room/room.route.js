@@ -1,6 +1,6 @@
 import { RoomPage } from "@app-pages";
 import { Navigate } from "react-router-dom";
-import { roomListRoute } from "@app-routes"
+import { roomListRoute, roomDetailsRoute } from "@app-routes"
 
 const routes = [
     {
@@ -11,7 +11,8 @@ const routes = [
                 index: true,
                 element: <Navigate to="./list" replace />,
             },
-            ...roomListRoute
+            ...roomListRoute,
+            ...roomDetailsRoute,
         ]
     }
 ];

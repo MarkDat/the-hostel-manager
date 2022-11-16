@@ -6,3 +6,4 @@ export { default as RoomPage } from './landlord/room/room';
 export { default as RoomListPage } from './landlord/room/list/room-list';
 export { default as SettingPage } from './landlord/setting/setting';
 export { default as LandLord } from './landlord/landlord';
+export { default as RoomDetailsPage } from './landlord/room/details/room-details';

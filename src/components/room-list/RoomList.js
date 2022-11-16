@@ -1,14 +1,11 @@
 import { ActionCellTemplate } from "@app-components";
-import { DataGrid, Lookup } from "devextreme-react";
+import { DataGrid } from "devextreme-react";
 import { Column, FilterRow, Pager, Paging } from "devextreme-react/data-grid";
-import React, { useCallback, useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
-import { RoomPopup } from "@app-components";
 
 export default function RoomList() {
 	const [dataSource, setDataSource] = useState([]);
-	const [isShowRoomDetails, setShowRoomDetails] = useState(true);
 
 	useEffect(() => {
 		setDataSource([
@@ -45,16 +42,11 @@ export default function RoomList() {
 
 	const onEditClicked = (event, data) => {
 		console.log('edit clicked: ', data);
-		setShowRoomDetails(true);
 	}
 
 	const onDeleteClicked = (event, data) => {
 		console.log('delete clicked: ', data);
 	}
-
-	const onHidingPopup = useCallback((e) => {
-		setShowRoomDetails(false);
-	}, []);
 
 	return (
 		<>
@@ -94,8 +86,6 @@ export default function RoomList() {
 					/>
 				</DataGrid>
 			</div>
-
-			<RoomPopup visible={isShowRoomDetails} onHiding={onHidingPopup} />
 		</>
 	);
 }
