@@ -11,3 +11,4 @@ export { default as  RoomDetails } from './room/room-details-form/RoomDetailsFor
 
 // Shared
 export { default as ActionCellTemplate } from './shared/action-cell-template/ActionCellTemplate';
+export { default as RoomActionTemplate } from './shared/room-action-template/RoomActionTemplate';

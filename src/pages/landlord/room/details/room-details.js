@@ -1,4 +1,4 @@
-import { RoomDetails } from "@app-components";
+import { RoomDetails, RoomActionTemplate } from "@app-components";
 import { ScrollView } from "devextreme-react";
 import './room-details.scss';
 
@@ -14,7 +14,7 @@ export default function RoomDetailsPage() {
             </ScrollView>
           </div>
           <div className="room-action">
-            Room action
+            <RoomActionTemplate />
           </div>
         </div>
       </div>
