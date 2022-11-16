@@ -44,7 +44,7 @@ export default function RoomList() {
 
 	const onEditClicked = (event, data) => {
 		console.log('edit clicked: ', data);
-		navigate(`../../../landlord`); 
+		navigate(`../${data.id}`); 
 	}
 
 	const onDeleteClicked = (event, data) => {

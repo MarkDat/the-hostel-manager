@@ -19,7 +19,7 @@ export const getCurrentNavigatePath = (navigation) => {
 
     
     const windowPath = window.location.pathname;
-    if(windowPath) {
+    if(windowPath) { console.log(paths);
         return paths.find(_ => windowPath.startsWith(_));
     }
 }
