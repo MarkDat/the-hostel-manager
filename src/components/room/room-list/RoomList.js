@@ -44,7 +44,7 @@ export default function RoomList() {
 
 	const onEditClicked = (event, data) => {
 		console.log('edit clicked: ', data);
-		navigate(`../${data.id}`); 
+		navigate(`../${data.id}`);
 	}
 
 	const onDeleteClicked = (event, data) => {
@@ -53,41 +53,44 @@ export default function RoomList() {
 
 	return (
 		<>
-			<h2 className={"content-block"}>Danh sách phòng</h2>
-			<div className={"content-block"}>
-				<DataGrid
-					className={"dx-card wide-card"}
-					dataSource={dataSource}
-					keyExpr="id"
-					showBorders={false}
-					showRowLines={false}
-					focusedRowEnabled={true}
-					columnAutoWidth={true}
-					columnHidingEnabled={true}
-				>
-					<Paging defaultPageSize={3} />
-					<Pager showPageSizeSelector={true} showInfo={true} />
-					<FilterRow visible={true} />
+			<div className="room-list content-block">
+				<h2 className="room-list__title">Danh sách phòng</h2>
+				<div className="room-list__content">
+					<DataGrid
+						className={"dx-card wide-card"}
+						dataSource={dataSource}
+						keyExpr="id"
+						showBorders={false}
+						showRowLines={false}
+						focusedRowEnabled={true}
+						columnAutoWidth={true}
+						columnHidingEnabled={true}
+						height="100%"
+					>
+						<Paging defaultPageSize={3} />
+						<Pager showPageSizeSelector={true} showInfo={true} />
+						<FilterRow visible={true} />
 
-					<Column dataField={"roomCode"} caption={"Mã Phòng"} />
-					<Column dataField={"roomName"} caption={"Tên Phòng"} />
-					<Column
-						dataField={"electricityNumber"}
-						alignment="left"
-						caption={"Số Điện"}
-					/>
-					<Column
-						dataField={"waterNumber"}
-						alignment="left"
-						caption={"Số Nước"}
-					/>
-					<Column
-						width={60}
-						fixed={true}
-						fixedPosition="right"
-						cellRender={(e) => <ActionCellTemplate event={e} onEditClicked={onEditClicked} onDeleteClicked={onDeleteClicked} />}
-					/>
-				</DataGrid>
+						<Column dataField={"roomCode"} caption={"Mã Phòng"} />
+						<Column dataField={"roomName"} caption={"Tên Phòng"} />
+						<Column
+							dataField={"electricityNumber"}
+							alignment="left"
+							caption={"Số Điện"}
+						/>
+						<Column
+							dataField={"waterNumber"}
+							alignment="left"
+							caption={"Số Nước"}
+						/>
+						<Column
+							width={60}
+							fixed={true}
+							fixedPosition="right"
+							cellRender={(e) => <ActionCellTemplate event={e} onEditClicked={onEditClicked} onDeleteClicked={onDeleteClicked} />}
+						/>
+					</DataGrid>
+				</div>
 			</div>
 		</>
 	);
