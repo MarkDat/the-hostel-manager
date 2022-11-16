@@ -98,11 +98,6 @@ export default function SideNavOuterToolbar({ title, navigation, children }) {
                 })}
               </div>
             </div>
-            <div className={'content-block'}>
-              {React.Children.map(children, (item) => {
-                return item.type === Footer && item;
-              })}
-            </div>
           </ScrollView>
         </div>
         <Template name={'menu'}>
@@ -124,3 +119,9 @@ const MenuStatus = {
   Opened: 2,
   TemporaryOpened: 3
 };
+
+{/* <div className={'content-block'}>
+              {React.Children.map(children, (item) => {
+                return item.type === Footer && item;
+              })}
+            </div> */}
