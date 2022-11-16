@@ -1,14 +1,13 @@
-import TreeView from 'devextreme-react/tree-view';
-import { memo, useCallback, useEffect, useMemo, useRef } from 'react';
-import { landlordNavigation as navigation } from '../../app-navigation';
-import { useNavigation } from '../../contexts/navigation';
-import { useScreenSize } from '../../utils/media-query';
-import './SideNavigationMenu.scss';
+import TreeView from "devextreme-react/tree-view";
+import { memo, useCallback, useEffect, useMemo, useRef } from "react";
+import { landlordNavigation as navigation } from "../../app-navigation";
+import { useNavigation } from "../../contexts/navigation";
+import { useScreenSize } from "../../utils/media-query";
+import "./SideNavigationMenu.scss";
 
-
-import { isNumeric } from '@app-tools/common-functions';
-import * as events from 'devextreme/events';
-import { useLocation } from 'react-router-dom';
+import { getCurrentNavigatePath, isNumeric } from "@app-tools/common-functions";
+import * as events from "devextreme/events";
+import { useLocation } from "react-router-dom";
 
 function SideNavigationMenu(props) {
   const {
@@ -17,17 +16,19 @@ function SideNavigationMenu(props) {
     openMenu,
     compactMode,
     onMenuReady,
-    onInitialized
+    onInitialized,
   } = props;
 
   const firstParentNode = useRef(null);
   const location = useLocation();
 
   const { isLarge } = useScreenSize();
-  function normalizePath () {
-    return navigation.map((item) => (
-      { ...item, expanded: isLarge, path: item.path && !(/^\//.test(item.path)) ? `/${item.path}` : item.path }
-    ))
+  function normalizePath() {
+    return navigation.map((item) => ({
+      ...item,
+      expanded: isLarge,
+      path: item.path && !/^\//.test(item.path) ? `/${item.path}` : item.path,
+    }));
   }
 
   const items = useMemo(
@@ -36,21 +37,27 @@ function SideNavigationMenu(props) {
     []
   );
 
-  const { navigationData: { currentPath }, setNavigationData } = useNavigation();
+  const {
+    navigationData: { currentPath },
+    setNavigationData,
+  } = useNavigation();
 
   const treeViewRef = useRef(null);
   const wrapperRef = useRef();
-  const getWrapperRef = useCallback((element) => {
-    const prevElement = wrapperRef.current;
-    if (prevElement) {
-      events.off(prevElement, 'dxclick');
-    }
+  const getWrapperRef = useCallback(
+    (element) => {
+      const prevElement = wrapperRef.current;
+      if (prevElement) {
+        events.off(prevElement, "dxclick");
+      }
 
-    wrapperRef.current = element;
-    events.on(element, 'dxclick', (e) => {
-      openMenu(e);
-    });
-  }, [openMenu]);
+      wrapperRef.current = element;
+      events.on(element, "dxclick", (e) => {
+        openMenu(e);
+      });
+    },
+    [openMenu]
+  );
 
   useEffect(() => {
     const treeView = treeViewRef.current && treeViewRef.current.instance;
@@ -68,15 +75,23 @@ function SideNavigationMenu(props) {
     }
 
     handleParentSelected();
-
   }, [currentPath, compactMode]);
+
+  useEffect(() => {
+    console.log("vo day");
+    setNavigationData({ currentPath: getCurrentNavigatePath(navigation) });
+  }, [window.location.pathname]);
 
   const handleParentSelected = useCallback(() => {
     const navCurrent = treeViewRef.current;
     const selectedNode = navCurrent.instance.getSelectedNodes()[0];
-    
-    if(!selectedNode || !selectedNode.parent || !isNumeric(selectedNode.parent.key)) {
-      firstParentNode.current?.classList.remove('child-selected');
+
+    if (
+      !selectedNode ||
+      !selectedNode.parent ||
+      !isNumeric(selectedNode.parent.key)
+    ) {
+      firstParentNode.current?.classList.remove("child-selected");
       firstParentNode.current = null;
       return;
     }
@@ -85,34 +100,32 @@ function SideNavigationMenu(props) {
     const nodeElements = navCurrent.instance._nodeElements();
 
     firstParentNode.current = nodeElements[parentKey].childNodes[0];
-    firstParentNode.current.className += ' child-selected';
-  
+    firstParentNode.current.className += " child-selected";
   }, [treeViewRef]);
 
-  console.log(treeViewRef.current);
+  console.log("Load navbar...");
 
   return (
     <div
-      className={'dx-swatch-additional side-navigation-menu'}
+      className={"dx-swatch-additional side-navigation-menu"}
       ref={getWrapperRef}
     >
-      <div className={'menu-container'}>
+      <div className={"menu-container"}>
         <TreeView
           ref={treeViewRef}
           items={items}
-          keyExpr={'path'}
-          selectionMode={'single'}
+          keyExpr={"path"}
+          selectionMode={"single"}
           focusStateEnabled={false}
-          expandEvent={'click'}
+          expandEvent={"click"}
           onItemClick={selectedItemChanged}
           onContentReady={onMenuReady}
-          width={'100%'}
+          width={"100%"}
           onInitialized={onInitialized}
         />
       </div>
     </div>
   );
 }
-
 
 export default memo(SideNavigationMenu);

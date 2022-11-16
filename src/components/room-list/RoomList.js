@@ -2,10 +2,12 @@ import { ActionCellTemplate } from "@app-components";
 import { DataGrid } from "devextreme-react";
 import { Column, FilterRow, Pager, Paging } from "devextreme-react/data-grid";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 export default function RoomList() {
 	const [dataSource, setDataSource] = useState([]);
+	let navigate = useNavigate();
 
 	useEffect(() => {
 		setDataSource([
@@ -42,6 +44,7 @@ export default function RoomList() {
 
 	const onEditClicked = (event, data) => {
 		console.log('edit clicked: ', data);
+		navigate(`../../../landlord`); 
 	}
 
 	const onDeleteClicked = (event, data) => {

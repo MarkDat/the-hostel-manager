@@ -70,11 +70,6 @@ export default function SideNavOuterToolbar({ title, navigation, children }) {
     }
   }, [navigate, menuStatus, isLarge]);
 
-
-  const onMenuInitialized = useCallback((e) => {
-    setNavigationData({ currentPath: getCurrentNavigatePath(navigation) });
-  });
-
   return (
     <div className={'side-nav-outer-toolbar'}>
       <Header
@@ -114,7 +109,6 @@ export default function SideNavOuterToolbar({ title, navigation, children }) {
             selectedItemChanged={onNavigationChanged}
             openMenu={temporaryOpenMenu}
             onMenuReady={onMenuReady}
-            onInitialized={onMenuInitialized}
           >
           </SideNavigationMenu>
         </Template>
