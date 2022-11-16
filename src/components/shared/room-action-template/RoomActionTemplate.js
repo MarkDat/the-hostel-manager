@@ -1,8 +1,8 @@
 import { Button } from 'devextreme-react';
-import { useEffect, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import './RoomActionTemplate.scss';
 
-export default function RoomActionTemplate() {
+function RoomActionTemplate({onReturnClicked}) {
     
     const [buttons, setButtons] = useState([]);
     
@@ -12,6 +12,7 @@ export default function RoomActionTemplate() {
                 width: 90,
                 text:"Trở về",
                 type:"normal",
+                onClick: onReturnClicked
             },
             {
                 width: 90,
@@ -38,4 +39,6 @@ export default function RoomActionTemplate() {
             </div>
         </>
       );
-}
+};
+
+export default memo(RoomActionTemplate);
