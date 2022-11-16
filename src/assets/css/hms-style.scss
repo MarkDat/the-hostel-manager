@@ -29,6 +29,11 @@ html, body {
         .content {
             line-height: 1.5;
             flex-grow: 1;
+            display: flex;
+
+            .main-content {
+                width: 100%;
+            }
         }
 
         .content-block {

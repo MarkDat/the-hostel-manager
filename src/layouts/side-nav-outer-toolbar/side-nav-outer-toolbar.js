@@ -92,9 +92,11 @@ export default function SideNavOuterToolbar({ title, navigation, children }) {
         <div className={'container'}>
           <ScrollView ref={scrollViewRef} className={'layout-body with-footer'}>
             <div className={'content'}>
-              {React.Children.map(children, (item) => {
-                return item.type !== Footer && item;
-              })}
+              <div className='main-content'>
+                {React.Children.map(children, (item) => {
+                  return item.type !== Footer && item;
+                })}
+              </div>
             </div>
             <div className={'content-block'}>
               {React.Children.map(children, (item) => {

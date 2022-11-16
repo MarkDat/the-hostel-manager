@@ -6,8 +6,8 @@ export { default as CreateAccountForm } from './create-account-form/CreateAccoun
 export { default as ChangePasswordForm } from './change-password-form/ChangePasswordForm';
 export { default as SideNavigationMenu } from './side-navigation-menu/SideNavigationMenu';
 export { default as RequireAuth } from './require-auth/RequireAuth';
-export { default as  RoomList } from './room-list/RoomList';
-export { default as  RoomDetails } from './room-details-form/RoomDetailsForm';
+export { default as  RoomList } from './room/room-list/RoomList';
+export { default as  RoomDetails } from './room/room-details-form/RoomDetailsForm';
 
 // Shared
 export { default as ActionCellTemplate } from './shared/action-cell-template/ActionCellTemplate';
