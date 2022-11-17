@@ -1,6 +1,7 @@
 import { RoomDetails, RoomActionTemplate } from "@app-components";
 import { ScrollView } from "devextreme-react";
 import { useCallback } from "react";
+import { isMobile } from "react-device-detect";
 import { useNavigate } from "react-router-dom";
 import './room-details.scss';
 
@@ -17,7 +18,7 @@ export default function RoomDetailsPage() {
     <>
       <div className="room-details-page">
         <div className="room-title">Chi tiết phòng</div>
-        <div className="room-container">
+        <div className={`room-container ${!isMobile ? 'room-resize-pc':''}`}>
           <div className="room-content">
             <ScrollView>
               <RoomDetails />

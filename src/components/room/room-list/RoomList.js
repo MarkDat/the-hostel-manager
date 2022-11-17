@@ -50,7 +50,7 @@ export default function RoomList() {
 	const onDeleteClicked = (event, data) => {
 		console.log('delete clicked: ', data);
 	}
-
+	
 	return (
 		<>
 			<div className="room-list content-block">

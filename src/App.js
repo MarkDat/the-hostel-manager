@@ -11,6 +11,9 @@ import { useScreenSizeClass } from './utils/media-query';
 import { NavigationProvider } from './contexts/navigation';
 import UnauthenticatedContent from './UnauthenticatedContent';
 import routes from './app-routes'
+import dxTextBox from 'devextreme/ui/text_box';
+import dxDateBox from 'devextreme/ui/date_box';
+import dxForm from 'devextreme/ui/form';
 
 const router = createBrowserRouter(routes);
 
@@ -22,6 +25,11 @@ const App = () => {
   }
 
   if (user) {
+
+    // dxTextBox.defaultOptions({options: {elementAttr: {class: 'inline-control'}}});
+    // dxDateBox.defaultOptions({options: {elementAttr: {class: 'inline-control'}}});
+    dxForm.defaultOptions({options: {labelMode: "floating"}});
+
     return <RouterProvider router={router} />;
   }
 

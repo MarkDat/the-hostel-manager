@@ -3,7 +3,7 @@
 .room-details-page {
     width: 100%;
     height: 100%;
-    padding-top: 2% !important;
+    padding-top: 1% !important;
 
     max-width: 1200px;
     margin: 0 auto;
@@ -21,9 +21,9 @@
         box-shadow: 0 0 10px #f1f1f1;
         padding: 5px 20px 30px 20px;
         border-radius: 5px;
-        margin-top: 20px;
+        margin-top: 15px;
         max-height: calc(100vh - 144px);
-        background-color: #fafafafa;
+        background-color: white;
 
         .room-content {
             height: 95%;
@@ -32,6 +32,11 @@
         .room-action {
             height: 5%;
             padding: 9px 0;
+        }
+
+        &.room-resize-pc {
+            margin-left: 10%;
+            margin-right: 10%;
         }
     }
 }
