@@ -1,4 +1,4 @@
-import { Popup } from 'devextreme-react';
+import { Popup, ScrollView } from 'devextreme-react';
 import { memo, useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { RoomDetailsForm } from '@app-components';
@@ -29,9 +29,6 @@ function RoomPopup({ visible, onHiding, width = 900, height = 'auto', title = 'C
                 options: {
                     text: 'Trở về',
                     width: 70,
-                    elementAttr: {
-                        class: "btn-cancel"
-                    },
                     onClick: onHiding
                 }
             }
@@ -51,15 +48,18 @@ function RoomPopup({ visible, onHiding, width = 900, height = 'auto', title = 'C
                     onHiding={onHiding}
                     fullScreen={isMobile}
                     dragEnabled={false}
-                    hideOnOutsideClick={true}
+                    hideOnOutsideClick={false}
                     showCloseButton={false}
                     showTitle={true}
                     title={title}
                     width={width}
                     height={height}
+                    minHeight={650}
                     toolbarItems={toolbarItems}
                 >
-                    <RoomDetailsForm />
+                    <ScrollView>
+                        <RoomDetailsForm />
+                    </ScrollView>
                 </Popup>
             </>
         </>

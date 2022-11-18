@@ -1,6 +1,7 @@
 import { Form, TextBox } from "devextreme-react";
-import { GroupItem, SimpleItem } from "devextreme-react/form";
+import { GroupItem, SimpleItem, Tab, TabbedItem, TabPanelOptions } from "devextreme-react/form";
 import { memo, useEffect, useRef, useState } from "react";
+import { RoomFeesList } from "@app-components";
 
 function RoomDetailsForm() {
 	const [roomDetails, setRoomDetails] = useState({});
@@ -10,9 +11,9 @@ function RoomDetailsForm() {
 	useEffect(() => {
 		setStatusRoomOptions({
 			dataSource: [
-				{id: 0, name: 'Còn trống'},
-				{id: 1, name: 'Đang thuê'},
-				{id: 2, name: 'Đang được đặt cọc'},
+				{ id: 0, name: 'Còn trống' },
+				{ id: 1, name: 'Đang thuê' },
+				{ id: 2, name: 'Đang được đặt cọc' },
 			],
 			displayExpr: 'name',
 			valueExpr: 'id',
@@ -52,6 +53,13 @@ function RoomDetailsForm() {
 							editorOptions={{ maxLength: 50 }}
 						/>
 					</GroupItem>
+					<SimpleItem
+						dataField="firstName"
+						editorType="dxTextArea"
+						label={{ text: "Ghi chú" }}
+						colSpan={2}
+						editorOptions={{ maxLength: 200 }}
+					/>
 				</GroupItem>
 				<GroupItem caption="Trạng thái phòng" colCount={2}>
 					<SimpleItem
@@ -76,6 +84,20 @@ function RoomDetailsForm() {
 							helpText="Tối đa 15 người"
 						/>
 					</GroupItem>
+				</GroupItem>
+				<GroupItem colSpan={2}>
+					<TabbedItem>
+						<TabPanelOptions deferRendering={false} width="100%" height="100%" focusStateEnabled={false} helpText="Click vào ô để chỉnh sửa"/>
+						<Tab title="Các loại phí">
+							<RoomFeesList />
+						</Tab>
+						<Tab title="Người thuê">
+							<SimpleItem dataField="Skype" />
+						</Tab>
+						<Tab title="Lịch sử thanh toán">
+							<SimpleItem dataField="Email" />
+						</Tab>
+					</TabbedItem>
 				</GroupItem>
 			</Form>
 		</>

@@ -154,3 +154,14 @@
     }
 }
 }
+
+// Tab panel
+.dx-tabpanel > .dx-tabpanel-tabs .dx-tab.dx-tab-active .dx-tab-content, .dx-tabpanel > .dx-tabpanel-tabs .dx-tab.dx-tab-selected .dx-tab-content{
+  color: $base-color;
+  font-weight: 600;
+}
+
+.dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tab.dx-tab-active .dx-tab-content, .dx-tabpanel.dx-state-focused > .dx-tabpanel-tabs .dx-tab.dx-tab-selected .dx-tab-content {
+  color: $base-color;
+  font-weight: 600;
+}

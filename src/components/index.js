@@ -9,6 +9,7 @@ export { default as RequireAuth } from './require-auth/RequireAuth';
 export { default as  RoomList } from './room/room-list/RoomList';
 export { default as  RoomDetailsForm } from './room/room-details-form/RoomDetailsForm';
 export { default as  RoomPopup } from './room/room-popup/RoomPopup';
+export { default as  RoomFeesList } from './room/room-details-form/room-fees-list/RoomFeesList';
 
 // Shared
 export { default as ActionCellTemplate } from './shared/action-cell-template/ActionCellTemplate';

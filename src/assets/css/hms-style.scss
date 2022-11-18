@@ -63,14 +63,14 @@ html, body {
     transition: opacity 200ms linear;
 }
 
-.btn-cancel {
+.btn-delete {
     background: none;
     color: red;
     border: 1px solid red;
 }
 
-.btn-cancel:hover {
-    @extend .btn-cancel;
+.btn-delete:hover {
+    @extend .btn-delete;
     opacity: 0.8;
     transition: opacity 200ms linear;
 }
