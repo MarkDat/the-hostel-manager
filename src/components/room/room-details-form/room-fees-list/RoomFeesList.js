@@ -1,6 +1,7 @@
 import { DataGrid } from "devextreme-react";
 import { Column, FilterRow, Pager, Paging } from "devextreme-react/data-grid";
 import { memo } from "react";
+import {ActionCellTemplate} from "@app-components";
 
 function RoomFeesList() {
 
@@ -26,6 +27,12 @@ function RoomFeesList() {
             <Column dataField={"unit"} caption={"Đơn vị"} hidingPriority={1} />
             <Column dataField={"total"} caption={"Thành tiền"} />
             <Column dataField={"description"} caption={"Ghi chú"} />
+            <Column
+							width={60}
+							fixed={true}
+							fixedPosition="right"
+							cellRender={(e) => <ActionCellTemplate event={e} />}
+						/>
 					</DataGrid>
       </div>
     </>
