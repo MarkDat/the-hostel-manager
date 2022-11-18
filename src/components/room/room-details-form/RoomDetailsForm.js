@@ -66,13 +66,13 @@ function RoomDetailsForm() {
 							dataField="rentDate"
 							editorType="dxDateBox"
 							label={{ text: "Ngày nhập phòng" }}
-							editorOptions={{ maxLength: 50 }}
+							editorOptions={{ maxLength: 50, readOnly: true }}
 						/>
 						<SimpleItem
 							dataField="peopleCurrentQuantity"
 							editorType="dxNumberBox"
 							label={{ text: "Số người đang ở" }}
-							editorOptions={{ maxLength: 50, min: 0, max: 15 }}
+							editorOptions={{ maxLength: 50, readOnly: true }}
 							helpText="Tối đa 15 người"
 						/>
 					</GroupItem>
