@@ -99,3 +99,25 @@
 .dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-hover {
   background-color: $base-fainter-color;
 }
+
+// Calendar popup
+.dx-calendar-cell.dx-calendar-selected-date.dx-calendar-contoured-date, .dx-calendar-cell.dx-calendar-selected-date.dx-calendar-today.dx-calendar-contoured-date {
+  box-shadow: inset 0 0 0 1px #bebebe, inset 0 0 0 1000px $base-color;
+}
+
+.dx-calendar-navigator .dx-calendar-caption-button.dx-button .dx-button-content {
+  color: $base-color;
+}
+
+.dx-calendar-navigator-previous-month.dx-button .dx-icon, .dx-calendar-navigator-previous-view.dx-button .dx-icon {
+  color: $base-color;
+}
+
+.dx-calendar-navigator-next-month.dx-button .dx-icon, .dx-calendar-navigator-next-view.dx-button .dx-icon {
+  color: $base-color;
+}
+
+.dx-calendar-cell.dx-calendar-contoured-date:not(.dx-calendar-empty-cell) {
+  box-shadow: inset 0 0 0 1px $base-color;
+  color: $base-color;
+}
