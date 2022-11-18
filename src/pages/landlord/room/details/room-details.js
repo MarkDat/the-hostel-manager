@@ -1,4 +1,4 @@
-import { RoomDetails, RoomActionTemplate } from "@app-components";
+import { RoomDetailsForm, ActionTemplate } from "@app-components";
 import { ScrollView } from "devextreme-react";
 import { useCallback } from "react";
 import { isMobile } from "react-device-detect";
@@ -21,11 +21,11 @@ export default function RoomDetailsPage() {
         <div className={`room-container ${!isMobile ? 'room-resize-pc':''}`}>
           <div className="room-content">
             <ScrollView>
-              <RoomDetails />
+              <RoomDetailsForm />
             </ScrollView>
           </div>
           <div className="room-action">
-            <RoomActionTemplate onReturnClicked={onReturnClicked} />
+            <ActionTemplate onReturnClicked={onReturnClicked} />
           </div> 
         </div>
       </div>

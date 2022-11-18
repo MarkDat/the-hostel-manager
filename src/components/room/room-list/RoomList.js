@@ -1,4 +1,4 @@
-import { ActionCellTemplate } from "@app-components";
+import { ActionCellTemplate, RoomPopup } from "@app-components";
 import { DataGrid } from "devextreme-react";
 import { Column, FilterRow, Pager, Paging } from "devextreme-react/data-grid";
 import { useEffect, useState } from "react";
@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function RoomList() {
 	const [dataSource, setDataSource] = useState([]);
+	const [isShowDetails, setShowDetails] = useState(false);
 	let navigate = useNavigate();
 
 	useEffect(() => {
@@ -43,12 +44,17 @@ export default function RoomList() {
 	}, []);
 
 	const onEditClicked = (event, data) => {
-		console.log('edit clicked: ', data);
-		navigate(`../${data.id}`);
+		// console.log('edit clicked: ', data);
+		// navigate(`../${data.id}`);
+		setShowDetails(true);
 	}
 
 	const onDeleteClicked = (event, data) => {
 		console.log('delete clicked: ', data);
+	}
+
+	const onPopupHiding = (e) => {
+		setShowDetails(false);
 	}
 	
 	return (
@@ -92,6 +98,8 @@ export default function RoomList() {
 					</DataGrid>
 				</div>
 			</div>
+
+			<RoomPopup visible={isShowDetails} onHiding={onPopupHiding}/>
 		</>
 	);
 }

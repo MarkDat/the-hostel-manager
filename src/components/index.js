@@ -7,8 +7,9 @@ export { default as ChangePasswordForm } from './change-password-form/ChangePass
 export { default as SideNavigationMenu } from './side-navigation-menu/SideNavigationMenu';
 export { default as RequireAuth } from './require-auth/RequireAuth';
 export { default as  RoomList } from './room/room-list/RoomList';
-export { default as  RoomDetails } from './room/room-details-form/RoomDetailsForm';
+export { default as  RoomDetailsForm } from './room/room-details-form/RoomDetailsForm';
+export { default as  RoomPopup } from './room/room-popup/RoomPopup';
 
 // Shared
 export { default as ActionCellTemplate } from './shared/action-cell-template/ActionCellTemplate';
-export { default as RoomActionTemplate } from './shared/room-action-template/RoomActionTemplate';
+export { default as ActionTemplate } from './shared/action-template/ActionTemplate';

@@ -1,23 +1,13 @@
 import { Form, TextBox } from "devextreme-react";
 import { GroupItem, SimpleItem } from "devextreme-react/form";
-import { useRef, useState } from "react";
+import { memo, useRef, useState } from "react";
 
-export default function RoomDetails() {
+function RoomDetailsForm() {
 	const [roomDetails, setRoomDetails] = useState({});
 	const formRef = useRef();
 
-	// const test = () => {
-	// 	if(!formRef.current) {
-	// 		return;
-	// 	}
-	// 	console.log(formRef.current);
-	// 	// var form = formRef.current.instance;  
-	// 	// form.itemOption("ID", "editorOptions", { placeholder: "Test"});  
-	// 	// form.itemOption("ID", "label", { text: "Test"});  
-	// }
 
-	// test();
-	console.log(formRef);
+	console.log('Room details form rendered');
 
 	return (
 		<>
@@ -44,3 +34,5 @@ export default function RoomDetails() {
 		</>
 	);
 }
+
+export default memo(RoomDetailsForm);
