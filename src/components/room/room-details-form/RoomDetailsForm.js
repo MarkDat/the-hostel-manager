@@ -1,34 +1,79 @@
 import { Form, TextBox } from "devextreme-react";
 import { GroupItem, SimpleItem } from "devextreme-react/form";
-import { memo, useRef, useState } from "react";
+import { memo, useEffect, useRef, useState } from "react";
 
 function RoomDetailsForm() {
 	const [roomDetails, setRoomDetails] = useState({});
+	const [statusRoomOptions, setStatusRoomOptions] = useState({});
 	const formRef = useRef();
+
+	useEffect(() => {
+		setStatusRoomOptions({
+			dataSource: [
+				{id: 0, name: 'Còn trống'},
+				{id: 1, name: 'Đang thuê'},
+				{id: 2, name: 'Đang được đặt cọc'},
+			],
+			displayExpr: 'name',
+			valueExpr: 'id'
+		});
+	}, []);
 
 
 	console.log('Room details form rendered');
 
 	return (
 		<>
-		<TextBox labelMode={"floating"} label={"hihu"}></TextBox>
 			<Form
 				formData={roomDetails}
 				ref={formRef}
+				colCount={2}
 			>
-				<GroupItem colCount={2}>
+				<GroupItem caption="Thông tin chung" colCount={2}>
 					<SimpleItem
 						dataField="firstName"
 						editorType="dxTextBox"
-						label={{text: "Tên"}}
+						label={{ text: "Tên phòng" }}
+						colSpan={2}
 						editorOptions={{ maxLength: 50 }}
 					/>
+					<GroupItem colSpan={2} colCount={2}>
+						<SimpleItem
+							dataField="rentDate"
+							editorType="dxDateBox"
+							label={{ text: "Ngày gia hạn" }}
+							editorOptions={{ maxLength: 50 }}
+						/>
+						<SimpleItem
+							dataField="rentDate"
+							editorType="dxDateBox"
+							label={{ text: "Ngày gia hạn kế" }}
+							editorOptions={{ maxLength: 50 }}
+						/>
+					</GroupItem>
+				</GroupItem>
+				<GroupItem caption="Trạng thái phòng" colCount={2}>
 					<SimpleItem
-						dataField="rentDate"
-						editorType="dxDateBox"
-						label={{text: "Ngày thuê"}}
-						editorOptions={{ maxLength: 50 }}
+						dataField="status"
+						editorType="dxSelectBox"
+						label={{ text: "Trạng thái" }}
+						colSpan={2}
+						editorOptions={statusRoomOptions}
 					/>
+					<GroupItem colSpan={2} colCount={2}>
+						<SimpleItem
+							dataField="rentDate"
+							editorType="dxDateBox"
+							label={{ text: "Ngày gia hạn" }}
+							editorOptions={{ maxLength: 50 }}
+						/>
+						<SimpleItem
+							dataField="rentDate"
+							editorType="dxDateBox"
+							label={{ text: "Ngày gia hạn kế" }}
+							editorOptions={{ maxLength: 50 }}
+						/>
+					</GroupItem>
 				</GroupItem>
 			</Form>
 		</>

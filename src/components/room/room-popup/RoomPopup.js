@@ -3,7 +3,7 @@ import { memo, useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { RoomDetailsForm } from '@app-components';
 
-function RoomPopup({ visible, onHiding, width = 500, height = 200, title = 'Chi tiết phòng' }) {
+function RoomPopup({ visible, onHiding, width = 750, height = 'auto', title = 'Chi tiết phòng' }) {
 
     const [toolbarItems, setToolbarItems] = useState([]);
 
@@ -18,7 +18,8 @@ function RoomPopup({ visible, onHiding, width = 500, height = 200, title = 'Chi 
                     width: 60,
                     elementAttr: {
                         class: "btn-ok"
-                    }
+                    },
+                    onClick: onOkClicked
                 }
             },
             {
@@ -30,11 +31,17 @@ function RoomPopup({ visible, onHiding, width = 500, height = 200, title = 'Chi 
                     width: 70,
                     elementAttr: {
                         class: "btn-cancel"
-                    }
+                    },
+                    onClick: onHiding
                 }
             }
         ]);
     }, []);
+
+    const onOkClicked = () => {
+        console.log('ok clicked');
+    }
+    
 
     return (
         <>

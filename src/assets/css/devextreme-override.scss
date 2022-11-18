@@ -79,3 +79,23 @@
 .dx-button-has-text .dx-button-content {
   padding: 7px 10px 7px;
 }
+
+.dx-popup-title.dx-toolbar {
+  background-color: $base-popup-title-color;
+  color: white;
+}
+
+// Select box
+.dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-list-item-selected {
+  background-color: $base-fainter2-color;
+  color: white;
+}
+
+.dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-list-item-selected.dx-state-hover:not(.dx-state-focused) {
+  background-color: $base-fainter3-color;
+  color: white;
+}
+
+.dx-list:not(.dx-list-select-decorator-enabled) .dx-list-item.dx-state-hover {
+  background-color: $base-fainter-color;
+}
