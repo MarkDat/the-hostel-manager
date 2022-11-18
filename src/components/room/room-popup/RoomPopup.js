@@ -3,7 +3,7 @@ import { memo, useEffect, useState } from 'react';
 import { isMobile } from 'react-device-detect';
 import { RoomDetailsForm } from '@app-components';
 
-function RoomPopup({ visible, onHiding, width = 750, height = 'auto', title = 'Chi tiết phòng' }) {
+function RoomPopup({ visible, onHiding, width = 900, height = 'auto', title = 'Chi tiết phòng' }) {
 
     const [toolbarItems, setToolbarItems] = useState([]);
 

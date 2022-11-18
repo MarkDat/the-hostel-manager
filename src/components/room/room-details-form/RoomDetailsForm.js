@@ -15,7 +15,8 @@ function RoomDetailsForm() {
 				{id: 2, name: 'Đang được đặt cọc'},
 			],
 			displayExpr: 'name',
-			valueExpr: 'id'
+			valueExpr: 'id',
+			placeholder: "Chọn trạng thái..."
 		});
 	}, []);
 
@@ -64,14 +65,15 @@ function RoomDetailsForm() {
 						<SimpleItem
 							dataField="rentDate"
 							editorType="dxDateBox"
-							label={{ text: "Ngày gia hạn" }}
+							label={{ text: "Ngày nhập phòng" }}
 							editorOptions={{ maxLength: 50 }}
 						/>
 						<SimpleItem
-							dataField="rentDate"
-							editorType="dxDateBox"
-							label={{ text: "Ngày gia hạn kế" }}
-							editorOptions={{ maxLength: 50 }}
+							dataField="peopleCurrentQuantity"
+							editorType="dxNumberBox"
+							label={{ text: "Số người đang ở" }}
+							editorOptions={{ maxLength: 50, min: 0, max: 15 }}
+							helpText="Tối đa 15 người"
 						/>
 					</GroupItem>
 				</GroupItem>
