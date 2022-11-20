@@ -61,7 +61,7 @@ function RoomPopup({
           width={width}
           height={height}
           minHeight={500}
-          maxHeight={screenSize.isMedium ? "99%" : 650}
+          maxHeight={600}
           toolbarItems={toolbarItems}
         >
           <ScrollView>
