@@ -60,7 +60,7 @@ function RoomPopup({
           title={title}
           width={width}
           height={height}
-          minHeight={500}
+          minHeight={600}
           maxHeight={600}
           toolbarItems={toolbarItems}
         >

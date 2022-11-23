@@ -3,32 +3,6 @@ import { memo, useEffect, useState } from 'react';
 import './ActionTemplate.scss';
 
 function ActionTemplate({toolbars, cssClass}) {
-    
-    // const [buttons, setButtons] = useState([]);
-    
-    // useEffect(() => {
-    //     setButtons([
-    //         {
-    //             width: 90,
-    //             text:"Trở về",
-    //             type:"normal",
-    //             onClick: onReturnClicked
-    //         },
-    //         {
-    //             width: 90,
-    //             text:"Cập nhật",
-    //             type:"normal",
-    //             className:"btn-ok"
-    //         },
-    //         {
-    //             width:90,
-    //             text:"Xóa",
-    //             type:"normal",
-    //             className:"btn-cancel"
-    //         },
-    //     ]);
-    // }, []);
-
 
     return (
         <>

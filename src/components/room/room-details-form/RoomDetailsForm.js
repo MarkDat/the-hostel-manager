@@ -77,13 +77,20 @@ function RoomDetailsForm() {
 								/>
 							</GroupItem>
 							<GroupItem caption="Trạng thái phòng" colCount={2}>
-								<SimpleItem
-									dataField="status"
-									editorType="dxSelectBox"
-									label={{ text: "Trạng thái" }}
-									colSpan={2}
-									editorOptions={statusRoomOptions}
-								/>
+								<GroupItem colSpan={2} colCount={2}>
+									<SimpleItem
+										dataField="status"
+										editorType="dxSelectBox"
+										label={{ text: "Trạng thái" }}
+										editorOptions={statusRoomOptions}
+									/>
+									<SimpleItem
+										dataField="financeStatus"
+										editorType="dxSelectBox"
+										label={{ text: "Trạng thái tài chính" }}
+										editorOptions={statusRoomOptions}
+									/>
+								</GroupItem>
 								<GroupItem colSpan={2} colCount={2}>
 									<SimpleItem
 										dataField="rentDate"
@@ -101,11 +108,11 @@ function RoomDetailsForm() {
 								</GroupItem>
 							</GroupItem>
 						</Tab>
-						<Tab title="Các loại phí">
-							<RoomFeesList />
-						</Tab>
 						<Tab title="Người thuê">
 							<SimpleItem dataField="Skype" />
+						</Tab>
+						<Tab title="Các loại phí">
+							<RoomFeesList />
 						</Tab>
 						<Tab title="Lịch sử thanh toán">
 							<SimpleItem dataField="Email" />

@@ -34,7 +34,7 @@
 
 // mobile
 .dx-device-mobile .dx-toolbar .dx-toolbar-items-container {
-  height: 56px;
+  height: 35px;
   overflow: visible;
 }
 
@@ -83,6 +83,9 @@
 .dx-popup-title.dx-toolbar {
   background-color: $base-popup-title-color;
   color: white;
+}
+.dx-device-mobile .dx-popup-bottom.dx-toolbar {
+  padding: 10px;
 }
 
 // Select box

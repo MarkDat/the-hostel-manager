@@ -77,7 +77,7 @@ export default function RoomList() {
 						<Pager showPageSizeSelector={true} showInfo={true} />
 						<FilterRow visible={true} />
 
-						<Column dataField={"roomCode"} caption={"Mã Phòng"} />
+						<Column dataField={"roomCode"} caption={"Mã Phòng"}  />
 						<Column dataField={"roomName"} caption={"Tên Phòng"} />
 						<Column
 							dataField={"electricityNumber"}
