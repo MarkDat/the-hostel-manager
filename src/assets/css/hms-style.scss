@@ -48,6 +48,7 @@ html, body {
     }
 
     .side-nav-outer-toolbar .dx-drawer {
+        flex: 1;
         height: calc(100% - 56px);
     }
 }
@@ -82,5 +83,9 @@ html, body {
 
     &--white {
         color: #f2f2f2 !important;
+    }
+
+    &--base {
+        color: $base-color !important;
     }
 }

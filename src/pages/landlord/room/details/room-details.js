@@ -27,10 +27,10 @@ export default function RoomDetailsPage() {
               <RoomDetailsForm />
             </ScrollView>
           </div>
-          <div className="room-action">
+        </div>
+        <div className="room-action">
             <RoomActionTemplate onReturnClicked={onReturnClicked}/>
           </div> 
-        </div>
       </div>
     </>
   );

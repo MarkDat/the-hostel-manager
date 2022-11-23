@@ -2,6 +2,8 @@ import { RoomPage } from "@app-pages";
 import { Navigate } from "react-router-dom";
 import { roomListRoute, roomDetailsRoute } from "@app-routes"
 
+
+
 const routes = [
     {
         path: "room",

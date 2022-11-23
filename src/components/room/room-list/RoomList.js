@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function RoomList() {
 	const [dataSource, setDataSource] = useState([]);
-	const [isShowDetails, setShowDetails] = useState(true);
+	const [isShowDetails, setShowDetails] = useState(false);
 	let navigate = useNavigate();
 
 	useEffect(() => {
@@ -45,8 +45,8 @@ export default function RoomList() {
 
 	const onEditClicked = (event, data) => {
 		// console.log('edit clicked: ', data);
-		// navigate(`../${data.id}`);
-		setShowDetails(true);
+		 navigate(`../${data.id}`);
+		//setShowDetails(true);
 	}
 
 	const onDeleteClicked = (event, data) => {
@@ -56,7 +56,9 @@ export default function RoomList() {
 	const onPopupHiding = useCallback((e) => {
 		setShowDetails(false);
 	}, []);
-	
+
+	console.log('Room list render');
+
 	return (
 		<>
 			<div className="room-list content-block">
@@ -99,7 +101,7 @@ export default function RoomList() {
 				</div>
 			</div>
 
-			<RoomPopup visible={isShowDetails} onHiding={onPopupHiding} />
+			{/* <RoomPopup visible={isShowDetails} onHiding={onPopupHiding} /> */}
 		</>
 	);
 }
