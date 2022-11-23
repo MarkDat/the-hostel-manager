@@ -1,7 +1,7 @@
 import { Form, TextBox } from "devextreme-react";
 import { GroupItem, SimpleItem, Tab, TabbedItem, TabPanelOptions } from "devextreme-react/form";
 import { memo, useEffect, useRef, useState } from "react";
-import { RoomFeesList } from "@app-components";
+import { RoomFeesList, RoomRenterList } from "@app-components";
 import './RoomDetailsForm.scss';
 
 function RoomDetailsForm() {
@@ -109,7 +109,7 @@ function RoomDetailsForm() {
 							</GroupItem>
 						</Tab>
 						<Tab title="Người thuê">
-							<SimpleItem dataField="Skype" />
+							<RoomRenterList />
 						</Tab>
 						<Tab title="Các loại phí">
 							<RoomFeesList />

@@ -23,7 +23,7 @@ export default function RoomDetailsPage() {
         <div className="room-title">Chi tiết phòng</div>
         <div className={`room-container ${!isMobile ? 'room-resize-pc':''}`}>
           <div className="room-content">
-            <ScrollView>
+            <ScrollView >
               <RoomDetailsForm />
             </ScrollView>
           </div>

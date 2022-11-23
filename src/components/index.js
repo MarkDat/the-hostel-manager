@@ -10,6 +10,7 @@ export { default as  RoomList } from './room/room-list/RoomList';
 export { default as  RoomDetailsForm } from './room/room-details-form/RoomDetailsForm';
 export { default as  RoomPopup } from './room/room-popup/RoomPopup';
 export { default as  RoomFeesList } from './room/room-details-form/room-fees-list/RoomFeesList';
+export { default as  RoomRenterList } from './room/room-details-form/room-renter-list/RoomRenterList';
 export { default as  RoomActionTemplate } from './room/room-details-form/room-action-template/RoomActionTemplate';
 
 // Shared
