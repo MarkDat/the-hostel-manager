@@ -11,7 +11,7 @@ html, body {
     height: 100%;
 
     .app {
-        background-color: #f2f2f2;
+        background-color: white;
         display: flex;
         height: 100%;
         width: 100%;
@@ -88,4 +88,15 @@ html, body {
     &--base {
         color: $base-color !important;
     }
+}
+
+.page-title {
+    font-size: $title-page-font-size;
+    font-size: 1.7em;
+    border-left: 3px solid $base-color;
+    padding: 3px 6px;
+    margin-bottom: 9px;
+    width: fit-content;
+    background-color: $base-fainter-color;
+    color: $base-color;
 }
